@@ -1,24 +1,20 @@
 .header {
-     text-align: center;
-     color: hotpink;
-     background-color: aqua;
-     height: 60px;
-     width: 1425px;
-     font-size: 30px;
-     padding: 40px;
-     font-style: italic;
- }
- h1{
-   font-style: italic;
- }
- *{
-   background-color: antiquewhite;
- }
- h2{
-   text-align: right;
-   font-style: italic;
-
- }
-
-  
-
+    text-align: center;
+    color: hotpink;
+    background-color: aqua;
+    height: 60px;
+    width: 100%;
+    font-size: 30px;
+    padding: 40px;
+    font-style: italic;
+}
+h1 {
+    font-style: italic;
+}
+* {
+    background-color: antiquewhite;
+}
+h2 {
+    text-align: right;
+    font-style: italic;
+}

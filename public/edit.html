@@ -1,34 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <link rel="stylesheet" href="style.css">
-  <title>swarna</title>
-  
-
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <title>Edit User</title>
 </head>
 <body>
-  <h2><a href ="index.html"> Go to users</a></h2>
-    <form>
-      <table>
-        
-        <tr>
-          <td>Name:</td>
-          <td><input type ="text"></td>
-          </tr>
-          <tr>
-            <td>Nickname:</td>
-            <td><input type ="text"></td>
+    <a href="index.html">Go to users</a>
+    <form id="editForm">
+        <table>
             <tr>
-              <td>Age:</td>
-              <td><input type ="number" value=" "></td>
+                <td>Name:</td>
+                <td><input type="text" id="name" required></td>
             </tr>
             <tr>
-              <td>Bio:</td>
-              <td><input type ="text"></td>
-            </tr>             
-          <tr>
-            <td><button type="submit">Save</button> </td>   
-                  </tr>
-      </table>
-              
-</form>
+                <td>Nickname:</td>
+                <td><input type="text" id="nickname" required></td>
+            </tr>
+            <tr>
+                <td>Age:</td>
+                <td><input type="number" id="age" required></td>
+            </tr>
+            <tr>
+                <td>Bio:</td>
+                <td><input type="text" id="bio" required></td>
+            </tr>
+            <tr>
+                <td><button type="submit">Save</button></td>
+            </tr>
+        </table>
+    </form>
+    <script src="scripts/editUser.js"></script>
+</body>
+</html>
