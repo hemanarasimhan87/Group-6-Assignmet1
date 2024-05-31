@@ -57,5 +57,5 @@ CREATE DATABASE loginDB;
 - Open your browser and navigate to: http://localhost:3000
    
 
-
-
+test;
+jest --detectOpenHandles

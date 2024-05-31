@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('nickname').value = user.nickname;
     document.getElementById('age').value = user.age;
     document.getElementById('bio').value = user.bio;
+    document.getElementById('user_password').value = user.user_password;
 
     // Handle form submission for updating user data
     document.getElementById('editForm').addEventListener('submit', async (event) => {
@@ -20,7 +21,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             name: document.getElementById('name').value,
             nickname: document.getElementById('nickname').value,
             age: document.getElementById('age').value,
-            bio: document.getElementById('bio').value
+            bio: document.getElementById('bio').value,
+            user_password: document.getElementById('user_password').value
         };
 
         // Send the updated user data to the server

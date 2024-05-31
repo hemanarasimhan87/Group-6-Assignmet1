@@ -23,7 +23,11 @@ app.get('/api/users', (req, res) => {
 app.get('/api/users/:id', (req, res) => {
     logic.getUserById(req.params.id, (error, results) => {
         if (error) return res.status(500).send(error);
-        res.json(results[0]);
+        if (results.length > 0) {
+            res.json(results[0]);
+        } else {
+            res.status(404).send('User not found');
+        }
     });
 });
 
@@ -58,8 +62,8 @@ app.delete('/api/users/:id', (req, res) => {
         }
     });
 });
-
 // Start the server
-app.listen(3000, () => {
+const server = app.listen(3000, () => {
     console.log("Server is running on port 3000.");
 });
+module.exports = { app, server };

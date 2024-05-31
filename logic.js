@@ -16,10 +16,12 @@ const createUser = (user, callback) => {
 };
 
 // Function to update an existing user in the database
-const updateUser = (id, user, callback) => {
-    db.query('UPDATE users SET ? WHERE id = ?', [user, id], callback);
+const updateUser = (id, userValues, callback) => {
+    const {name, nickname,age,bio, password} = userValues;
+    const sql = 'UPDATE users SET name = ?, nickname = ?, age = ?, bio = ? ,user_password = ? WHERE id = ?';
+    db.query(sql, [name,nickname,age,bio,user_password,id], callback);
 };
-
+    
 // Function to delete a user from the database
 const deleteUser = (id, callback) => {
     db.query('DELETE FROM users WHERE id = ?', [id], callback);

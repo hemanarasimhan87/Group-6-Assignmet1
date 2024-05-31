@@ -14,5 +14,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         <p>Nickname: ${user.nickname}</p>
         <p>Age: ${user.age}</p>
         <p>Bio: ${user.bio}</p>
+        <p>user_password: ${user.user_password}</p>
     `;
 });

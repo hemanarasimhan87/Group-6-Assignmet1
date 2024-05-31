@@ -5,7 +5,8 @@ document.getElementById('createForm').addEventListener('submit', async (event) =
         name: document.getElementById('name').value,
         nickname: document.getElementById('nickname').value,
         age: document.getElementById('age').value,
-        bio: document.getElementById('bio').value
+        bio: document.getElementById('bio').value,
+        user_password: document.getElementById('user_password').value,
     };
 
     // Send the new user data to the server
