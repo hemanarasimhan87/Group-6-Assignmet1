@@ -17,7 +17,7 @@ const createUser = (user, callback) => {
 
 // Function to update an existing user in the database
 const updateUser = (id, userValues, callback) => {
-    const {name, nickname,age,bio, password} = userValues;
+    const {name, nickname,age,bio, user_password} = userValues;
     const sql = 'UPDATE users SET name = ?, nickname = ?, age = ?, bio = ? ,user_password = ? WHERE id = ?';
     db.query(sql, [name,nickname,age,bio,user_password,id], callback);
 };

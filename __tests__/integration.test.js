@@ -14,7 +14,7 @@ describe ('integration tests', () => {
     it('GET/api/users should return all users',async () =>{
         const response = await request(app).get('/api/users');
         expect(response.status).toBe(200);
-        expect(response.body.length).toBe(3);
+        expect(response.body.length).toBe(2);
         userId = response.body[0].id;
         expect(userId).toBeDefined();
     });

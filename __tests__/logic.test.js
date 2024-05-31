@@ -18,8 +18,8 @@ describe('User Database Operations', () => {
 
     it('should retrieve all users', (done) => {
         const mockUsers = [
-            {id: 1, name: 'ling', nickname: 'ling', age: 20, bio: 'I like testing',password:'123456'},
-            {id: 2, name: 'hema', nickname: 'hema', age: 22, bio: 'I like Javascript',password:'098765'}
+            {id: 1, name: 'ling', nickname: 'ling', age: 20, bio: 'I like testing',user_password:'123456'},
+            {id: 2, name: 'hema', nickname: 'hema', age: 22, bio: 'I like Javascript',user_password:'098765'}
         ];
         db.query.mockImplementation((query, callback) => {
             callback(null, mockUsers);
@@ -33,7 +33,7 @@ describe('User Database Operations', () => {
     });
 
     it('should retrieve a user by ID', (done) => {
-        const mockUser = {id: 1, name: 'ling', nickname: 'ling', age: 20, bio: 'I like testing',password:'123456'};
+        const mockUser = {id: 1, name: 'ling', nickname: 'ling', age: 20, bio: 'I like testing',user_password:'123456'};
         db.query.mockImplementation((query, params, callback) => {
             callback(null, [mockUser]);
         });
@@ -58,7 +58,7 @@ describe('User Database Operations', () => {
     });
 
     it('should create a new user', (done) => {
-        const newUser = { name: 'Charlie', nickname: 'Chuck', age: 30, bio: 'A cool guy' ,password:'135790'};
+        const newUser = { name: 'Charlie', nickname: 'Chuck', age: 30, bio: 'A cool guy' ,user_password:'135790'};
         db.query.mockImplementation((query, user, callback) => {
             callback(null, { insertId: 3 });
         });
@@ -75,8 +75,8 @@ describe('User Database Operations', () => {
             callback(null, { affectedRows: 1 });
         });
 
-        const updatedUser = { name: 'Alice', nickname: 'Ali', age: 25, bio: 'A nice person',password:'235790' };
-        updateUser(1, [updatedUser.name, updatedUser.nickname, updatedUser.age, updatedUser.bio], (err, result) => {
+        const updatedUser = { name: 'Alice', nickname: 'Ali', age: 25, bio: 'A nice person',user_password:'235790' };
+        updateUser(1, [updatedUser.name, updatedUser.nickname, updatedUser.age, updatedUser.bio,updatedUser.user_password], (err, result) => {
             expect(err).toBeNull();
             expect(result).toEqual({ affectedRows: 1 });
             done();
