@@ -1,5 +1,4 @@
 const mysql = require('mysql2');
-require('dotenv').config();
 
 // Create a MySQL connection using environment variables
 const connection = mysql.createConnection({

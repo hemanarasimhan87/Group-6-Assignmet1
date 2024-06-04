@@ -1,4 +1,7 @@
+require('dotenv').config();
+
 const db = require('./database');
+const mockDatabase = require("./mockdatabase");
 
 // Function to retrieve all users from the database
 const getAllUsers = (callback) => {
@@ -27,4 +30,9 @@ const deleteUser = (id, callback) => {
     db.query('DELETE FROM users WHERE id = ?', [id], callback);
 };
 
-module.exports = { getAllUsers, getUserById, createUser, updateUser, deleteUser };
+if(process.env.DB_TYPE === "mock") {
+    module.exports = mockDatabase;
+} else {
+    module.exports = { getAllUsers, getUserById, createUser, updateUser, deleteUser };
+}
+
